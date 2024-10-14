@@ -17,8 +17,10 @@ void deleteX(LinkList list, int x)
   LNode *p = list;    // p指向q的前驱结点
   LNode *q = p->next; // q指向下一个要处理的结点
   while (p != NULL)
-    if (p->data != x)
+    if (p->data == x)
     {
+      p = q->next;
+      free(q);
     }
     else
       p = q, q = q->next;
